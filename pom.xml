@@ -60,11 +60,30 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.webjars.bowergithub.jquery/jquery-dist -->
-<dependency>
-    <groupId>org.webjars.bowergithub.jquery</groupId>
-    <artifactId>jquery-dist</artifactId>
-    <version>3.3.1</version>
-</dependency>
+		<dependency>
+		    <groupId>org.webjars.bowergithub.jquery</groupId>
+		    <artifactId>jquery-dist</artifactId>
+		    <version>3.3.1</version>
+		</dependency>
+		
+		<!--  spring security -->
+		<dependency>
+	    	<groupId>org.springframework.security</groupId>
+	    	<artifactId>spring-security-web</artifactId>
+	    </dependency>
+	  
+	    <dependency>
+	    	<groupId>org.springframework.security</groupId>
+	    	<artifactId>spring-security-config</artifactId>
+	    </dependency>
+	    <!-- 
+	    <dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<version>3.0.4.RELEASE</version>	
+		  </dependency>
+		 -->
+		  
 	</dependencies>
 
 	<build>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:insert="fragments/fragments.html :: header"/>
+
+	<body>
+	
+		<div th:replace="fragments/fragments.html :: navigation"></div>
+		
+		<div class="container">
+			<div class="jumbotron">
+			  <h1 class="display-4">Zone d'administration</h1>
+			  <p class="lead">Tone accessible uniquement à un utilisateur authentifié</p>
+			  <hr class="my-4">
+			  
+			</div>
+			
+		</div>
+		
+		
+		
+		<div th:replace="fragments/fragments.html :: scripts"></div>
+	</body>
+</html>
