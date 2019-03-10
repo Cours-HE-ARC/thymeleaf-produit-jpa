@@ -22,7 +22,6 @@ public class InMemoryProduitDAO implements ProduitDAO{
 	static{
 		DATASOURCE.add(new Produit("produit 1",new BigDecimal("12.50")));
 		DATASOURCE.add(new Produit("produit 2",new BigDecimal(18)));
-		
 	}
 
 

@@ -69,8 +69,15 @@
 					        <td th:if="${produit.prix} > 10" th:text="Cher" />
 					        <td th:unless="${produit.prix} > 10" th:text="Budget" />
 					         
+					         
+					         
+					         
+					         
+					         
+					         
+					         
 					        <!-- mieux mettre la logique métier dans produit
-					        <td th:if="${produit.isCher} > 10" th:text="Cher" />
+					        <td th:if="${produit.isCher}" th:text="Cher" />
 					         --> 
 					    </tr>
 					</tbody>
