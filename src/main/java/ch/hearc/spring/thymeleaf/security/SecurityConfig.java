@@ -24,16 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	
-
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
     	auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
-    	
-    	/**auth
-            .inMemoryAuthentication()
-                .withUser("user").password("{noop}password").roles("USER")
-                .and()
-                .withUser("admin").password("{noop}password").roles("ADMIN");*/
     }
     
     @Override
@@ -46,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/").permitAll()
 			.and()
 			.authorizeRequests()	
-				.antMatchers("/admin").authenticated()
+				.antMatchers("/admin").hasRole("ADMIN")
 				.and()
 				.formLogin();
 		
@@ -54,9 +47,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.headers().frameOptions().disable();
 	}
     
-    @Bean
+   /* @Bean
     public AuthenticationManager customAuthenticationManager() throws Exception {
         return authenticationManager();
-    }
+    }*/
     
 }

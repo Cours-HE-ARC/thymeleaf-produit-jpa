@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ch.hearc.spring.thymeleaf.model.Role;
 import ch.hearc.spring.thymeleaf.model.Utilisateur;
 import ch.hearc.spring.thymeleaf.repository.UtilisateurRepository;
+import org.springframework.security.core.userdetails.User;
 
 @Service
 public class UtilisateurDetailServiceImpl implements UserDetailsService {
@@ -35,7 +36,7 @@ public class UtilisateurDetailServiceImpl implements UserDetailsService {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getNom()));
         }
 
-        return new org.springframework.security.core.userdetails.User(utilisateur.getNomUtilisateur(), utilisateur.getMotDePasse(), grantedAuthorities);
+        return new User(utilisateur.getNomUtilisateur(), utilisateur.getMotDePasse(), grantedAuthorities);
 	}
 
 }

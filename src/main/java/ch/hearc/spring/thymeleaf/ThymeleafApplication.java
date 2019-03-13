@@ -44,7 +44,10 @@ public class ThymeleafApplication {
 	public void initData() {
 		Role role = new Role();
 		role.setNom("ROLE_ADMIN");
+		roleRepo.save(role);
 		
+		role = new Role();
+		role.setNom("ROLE_USER");
 		roleRepo.save(role);
 		
 		Utilisateur u = new Utilisateur();
@@ -52,6 +55,17 @@ public class ThymeleafApplication {
 		u.setMotDePasse(bCryptPasswordEncoder.encode("password"));
 		
 		Set<Role> roles = new HashSet<>();
+		roles.add(role);
+		u.setRoles(roles);
+		
+		utilisateurRepo.save(u);
+		
+		
+		u = new Utilisateur();
+		u.setUsername("user");
+		u.setMotDePasse(bCryptPasswordEncoder.encode("password"));
+		
+		roles = new HashSet<>();
 		roles.add(role);
 		u.setRoles(roles);
 		
