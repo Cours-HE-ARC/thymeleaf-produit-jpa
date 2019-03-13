@@ -25,6 +25,13 @@
           Menu
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a sec:authorize="hasRole('ADMIN')"
+          class="dropdown-item" href="/comptes">Admin Comptes Bancaires
+          </a>
+          <a class="dropdown-item" href="/comptesperso">Compte Bancaires
+          </a>
+           <a class="dropdown-item" href="/saisie_transfert">Transfert
+          </a>
           <a class="dropdown-item" href="/basic">Concepts de bases</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/produits">Liste Produits</a>
