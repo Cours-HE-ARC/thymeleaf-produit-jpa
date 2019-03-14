@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ch.hearc.spring.thymeleaf.data.ProduitDAO;
 import ch.hearc.spring.thymeleaf.repository.ProduitRepository;
+
 
 
 
@@ -24,7 +24,7 @@ import ch.hearc.spring.thymeleaf.repository.ProduitRepository;
 public class AccueilController {
 
 		@Autowired
-		ProduitDAO produitDao;
+		private ProduitRepository produitRepository;
 		
 		@Value("${accueil.message:test}")
 		private String message;
@@ -48,7 +48,7 @@ public class AccueilController {
 			model.put("page", "Concepts de bases");
 			
 			
-			model.put("produits", produitDao.findAll());
+			model.put("produits", produitRepository.findAll());
 			return "basic";
 		}
 		

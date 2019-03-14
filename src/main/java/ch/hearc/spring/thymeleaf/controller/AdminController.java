@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ch.hearc.spring.thymeleaf.data.ProduitDAO;
 import ch.hearc.spring.thymeleaf.repository.ProduitRepository;
 
 

@@ -42,34 +42,34 @@ public class ThymeleafApplication {
 
 	@PostConstruct
 	public void initData() {
-		Role role = new Role();
-		role.setNom("ROLE_ADMIN");
-		roleRepo.save(role);
+		Role roleAdmin = new Role();
+		roleAdmin.setNom("ROLE_ADMIN");
+		roleRepo.save(roleAdmin);
 		
-		role = new Role();
-		role.setNom("ROLE_USER");
-		roleRepo.save(role);
+		Role roleUser = new Role();
+		roleUser.setNom("ROLE_USER");
+		roleRepo.save(roleUser);
 		
-		Utilisateur u = new Utilisateur();
-		u.setUsername("admin");
-		u.setMotDePasse(bCryptPasswordEncoder.encode("password"));
+		Utilisateur admin = new Utilisateur();
+		admin.setUsername("admin");
+		admin.setMotDePasse(bCryptPasswordEncoder.encode("password"));
 		
 		Set<Role> roles = new HashSet<>();
-		roles.add(role);
-		u.setRoles(roles);
+		roles.add(roleAdmin);
+		admin.setRoles(roles);
 		
-		utilisateurRepo.save(u);
+		utilisateurRepo.save(admin);
 		
 		
-		u = new Utilisateur();
-		u.setUsername("user");
-		u.setMotDePasse(bCryptPasswordEncoder.encode("password"));
+		Utilisateur user = new Utilisateur();
+		user.setUsername("user");
+		user.setMotDePasse(bCryptPasswordEncoder.encode("password"));
 		
-		roles = new HashSet<>();
-		roles.add(role);
-		u.setRoles(roles);
+		Set<Role> rolesUser = new HashSet<>();
+		rolesUser.add(roleUser);
+		admin.setRoles(rolesUser);
 		
-		utilisateurRepo.save(u);
+		utilisateurRepo.save(user);
 		
 		
 	}

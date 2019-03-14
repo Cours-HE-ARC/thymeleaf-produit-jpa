@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ch.hearc.spring.thymeleaf.data.ProduitDAO;
+
 import ch.hearc.spring.thymeleaf.model.Produit;
 import ch.hearc.spring.thymeleaf.repository.ProduitRepository;
 
@@ -22,7 +22,7 @@ public class ProduitController {
 
 	
 	@Autowired
-	private ProduitDAO pdao;
+	private ProduitRepository pdao;
 	
 	//private ProduitRepository prepo;
 	
