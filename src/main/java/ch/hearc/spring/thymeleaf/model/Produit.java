@@ -60,5 +60,13 @@ public class Produit {
 	public boolean isCher() {
 		return prix.doubleValue() > 10.0;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 }
